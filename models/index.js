@@ -1,0 +1,12 @@
+var express = require('express');
+var path = require('path');
+var index = require('./routes/index');
+var bodyParser = require('body-parser');
+var mustache = require('mustache-express');
+var fs = require('fs');
+var Busboy = require('busboy');
+var app = express();
+app.engine('mustache', mustache());
+app.set('view engine', 'mustache');
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(express.static(path.join(__dirname, 'public')));
