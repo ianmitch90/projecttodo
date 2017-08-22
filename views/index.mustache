@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Go get some todo's and list em</title>
+    <link rel="stylesheet" href='master.css'>
+  </head>
+  <body>
+
+    <form class="" action="/add" method="post">
+      <input type="text" name="listItem" value="">
+      <input type="submit" name="submit" value="Submit!">
+    </form>
+
+    <form class="" action="/completed" method="post">
+    <h1>Things to do</h1>
+      {{#todos}}
+      <label for="button"></label>
+      <button type="submit" name="button" value='{{id}}'>Completed</button>
+      <label for="button">{{task}}</label>
+  
+      {{/todos}}
+
+      <h1>Completed</h1>
+       {{#complete}}
+        {{task}}
+      {{/complete}}
+    </form>
+
+  </body>
+</html>
